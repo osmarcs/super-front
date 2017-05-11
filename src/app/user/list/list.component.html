@@ -1,0 +1,18 @@
+<ul class="row" id="usersList">
+  <li *ngFor="let user of users; let i = index" class="col-sm-4 col-md-3 col-6">
+    <a [routerLink]="['/user/details', user.id||666]">
+      <div id="img-user">
+        <img [src]="user.avatar" alt="" class="rounded-circle">
+        <div class="overlay-plus rounded-circle">
+          <i class="fa fa-plus"></i>
+        </div>
+      </div>
+      <strong>{{user.name}}</strong>
+    </a>
+  </li>
+</ul>
+
+<nav>
+  <pagination [currentPage]="currentPage" [totalPages]="totalPages"
+    [changePage]="changePage"></pagination>
+</nav>

@@ -1,0 +1,21 @@
+{
+  "name": "super-users",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Osmar Costa <osmar.costa.s@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "bootstrap4#v4.0.0-alpha.6",
+    "font-awesome": "^4.7.0"
+  }
+}

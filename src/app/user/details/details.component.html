@@ -1,0 +1,29 @@
+<div class="row">
+  <div id="details" class="jumbotron">
+    <img [src]="user.avatar" alt="" class="rounded-circle">
+    <strong [className]="field">
+      {{textShow || user.name}}
+    </strong>
+    <ul>
+      <li (mouseover)="itemOver('name')">
+        <i class="fa fa-user"></i>
+      </li>
+      <li (mouseover)="itemOver('email')">
+        <i class="fa fa-envelope"></i>
+      </li>
+      <li (mouseover)="itemOver('dob')">
+        <i class="fa fa-calendar-o"></i>
+      </li>
+      <li (mouseover)="itemOver('address')">
+        <i class="fa fa-address-card"></i>
+      </li>
+      <li (mouseover)="itemOver('phone')">
+        <i class="fa fa-phone"></i>
+      </li>
+    </ul>
+    <button class="btn btn-outline-primary btn-sm float-left" (click)="goBack()">
+      <i class="fa fa-undo"></i>
+      Voltar
+    </button>
+  </div>
+</div>

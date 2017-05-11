@@ -1,0 +1,7 @@
+html {
+  min-height: 100%;
+}
+body {
+  background: linear-gradient(519deg, #e4ffe8 0%, #67d7e3 calc(100vw / 2.8), #f4f4f4 calc(100vw/2.79), #fff);
+  background-repeat: no-repeat;
+}

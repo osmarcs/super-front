@@ -1,0 +1,54 @@
+#usersList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#usersList li {
+  margin-bottom: 20px;
+  text-align: center;
+}
+#usersList a {
+  font-size: .9em;
+  text-decoration: none;
+}
+#usersList strong {
+  color: #673ab7;
+  display: block;
+  text-transform: capitalize;
+}
+
+#usersList #img-user {
+  position: relative;
+  max-width: 128px;
+  max-height: 128px;
+  margin: auto;
+}
+#usersList #img-user img {
+  max-width: 128px;
+  width: 100%;
+}
+
+#usersList .overlay-plus {
+  background-color: rgba(103, 58, 183, .8);
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 50%;
+  max-width: 128px;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
+  transition: .5s;
+  transform: translateX(-50%);
+}
+#usersList li:hover .overlay-plus {
+  opacity: 1;
+}
+#usersList .overlay-plus .fa {
+  color: #fff;
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

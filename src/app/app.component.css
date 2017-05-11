@@ -1,0 +1,15 @@
+main {
+  max-width: 46em;
+}
+
+main header {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #9C27B0;
+}
+main header h2 {
+  color: #9C27B0;
+}
+main header a{
+  color: #9C27B0;
+}
