@@ -9,6 +9,7 @@ Teste realizado usando angular 4, bootstrap 4 e bower.
 Após o pull.
 
 ``cd pasta_do_projeto``  
+``npm install``  
 ``bower install``  
 ``ng serve``
 
