@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router}   from '@angular/router';
+import {Subscription} from 'rxjs/Subscription';
+
+
 import { User } from '../User';
 import { UserService } from '../user.service';
 
@@ -12,8 +16,13 @@ export class ListComponent implements OnInit {
   users:User[] = [];
   currentPage:number = 1;
   totalPages:number[] = [];
+  private sub:Subscription;
 
-  constructor (private userService: UserService) {}
+  constructor (
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
   getUsers(): void {
     this.userService.getUsers(this.currentPage).subscribe(res => {
@@ -27,13 +36,25 @@ export class ListComponent implements OnInit {
       if (page == this.currentPage || page > this.totalPages.length || page < 1) {
         return;
       }
-      this.currentPage = page;
-      this.getUsers();
+      this.goToPage(page);
   }
 
   ngOnInit(): void {
-    this.getUsers();
     this.changePage = this.changePage.bind(this);
+    this.sub = this.route
+      .queryParams
+      .subscribe(params => {
+        this.currentPage = params['page'] || 1;
+        this.getUsers();
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
+
+  goToPage(pageNum) {
+    this.router.navigate(['/user/list'], { queryParams: { page: pageNum } });
   }
 
 }
